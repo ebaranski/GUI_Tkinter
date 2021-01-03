@@ -2,9 +2,10 @@ from tkinter import *
 
 window = Tk()
 
+
 def convert_number():
     grams = float(e1_value.get()) * 1000
-    t2.delete("1.0", END)  #Delete contents from start to end
+    t2.delete("1.0", END)  # Delete contents from start to end
     t2.insert(END, grams)
     pounds = float(e1_value.get()) * 2.20462
     t3.delete("1.0", END)
