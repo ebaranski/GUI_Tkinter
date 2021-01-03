@@ -25,7 +25,7 @@ t1.grid(row=0, column=2)
 # enter value, press button and show in text
 # for button to do something, add command parm to run function
 # get input field by using textvariable parm on Entry widget (use .get() to get string value)
-# add value to text by using .insert
+# add value to text by using .insert_db
 
 # show window
 window.mainloop()
