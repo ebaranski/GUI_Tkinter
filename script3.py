@@ -65,12 +65,27 @@ def insert_db(item, quantity, price):
         db.close()
         exit()
 
+
 def select_db():
     db.reconnect()
     sql_stmt = "SELECT * FROM store"
     cursor.execute(sql_stmt)
     rows = cursor.fetchall()
     return rows
+
+
+def delete_db(item):
+    db.reconnect()
+    sql_stmt = "DELETE FROM store WHERE item = %s"
+    cursor.execute(sql_stmt, [item])
+    db.commit()
+
+
+def update_db(item, quantity, price):
+    db.reconnect()
+    sql_stmt = "UPDATE store SET quantity=%s, price=%s WHERE item = %s"
+    cursor.execute(sql_stmt, [quantity, price, item])
+    db.commit()
 
 
 # Store credentials as Environment Variables (not as plain text)
@@ -86,6 +101,10 @@ cursor = db.cursor(dictionary=True)
 
 # Create table and test data if needed
 create_table(add_data=True)
+
+delete_db('Wine Glass')
+
+update_db('Water Glass', 25, 6.99)
 
 # get data and print
 for row in select_db():
