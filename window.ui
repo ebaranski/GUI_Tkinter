@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+    <object class="tk.Toplevel" id="toplevel_1">
+        <property name="background">#9bc4d5</property>
+        <property name="height">600</property>
+        <property name="resizable">both</property>
+        <property name="title" translatable="yes">BookStore</property>
+        <property name="width">600</property>
+        <child>
+            <object class="ttk.Frame" id="frame_top">
+                <property name="borderwidth">5</property>
+                <property name="height">75</property>
+                <property name="relief">raised</property>
+                <property name="width">600</property>
+                <property name="style">CustomFrame.TFrame</property>
+                <layout manager="grid">
+                    <property name="padx">10</property>
+                    <property name="pady">10</property>
+                    <property name="propagate">False</property>
+                    <property name="sticky">ne</property>
+                </layout>
+                <child>
+                    <object class="ttk.Label" id="label_title">
+                        <property name="style">CustomLabel.TLabel</property>
+                        <property name="font">{Verdana} 10 {}</property>
+                        <property name="text" translatable="yes">Title</property>
+                        <property name="width">10</property>
+                        <property name="anchor">e</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.0</property>
+                            <property name="rely">0.05</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Label" id="label_year">
+                        <property name="style">CustomLabel.TLabel</property>
+                        <property name="font">{Verdana} 10 {}</property>
+                        <property name="text" translatable="yes">Year</property>
+                        <property name="width">10</property>
+                        <property name="anchor">e</property>
+                        <layout manager="place">
+                            <property name="rely">0.55</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Label" id="label_author">
+                        <property name="style">CustomLabel.TLabel</property>
+                        <property name="font">{Verdana} 10 {}</property>
+                        <property name="text" translatable="yes">Author</property>
+                        <property name="width">10</property>
+                        <property name="anchor">e</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.49</property>
+                            <property name="rely">.05</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Label" id="label_isbn">
+                        <property name="style">CustomLabel.TLabel</property>
+                        <property name="font">{Verdana} 10 {}</property>
+                        <property name="text" translatable="yes">ISBN</property>
+                        <property name="width">10</property>
+                        <property name="anchor">e</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.49</property>
+                            <property name="rely">0.55</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Entry" id="entry_title">
+                        <property name="font">TkMenuFont</property>
+                        <property name="justify">left</property>
+                        <property name="state">normal</property>
+                        <property name="textvariable">string:titlefield</property>
+                        <property name="validate">none</property>
+                        <property name="width">30</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.15</property>
+                            <property name="rely">.05</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Entry" id="entry_year">
+                        <property name="font">TkDefaultFont</property>
+                        <property name="justify">left</property>
+                        <property name="textvariable">string:yearfield</property>
+                        <property name="width">10</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.15</property>
+                            <property name="rely">.55</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Entry" id="entry_author">
+                        <property name="exportselection">true</property>
+                        <property name="textvariable">string:authorfield</property>
+                        <property name="width">30</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.64</property>
+                            <property name="rely">.05</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Entry" id="entry_isbn">
+                        <property name="textvariable">string:isbnfield</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.64</property>
+                            <property name="rely">0.55</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="ttk.Frame" id="frame_buttons">
+                <property name="height">200</property>
+                <property name="relief">raised</property>
+                <property name="width">150</property>
+                <property name="style">CustomFrame.TFrame</property>
+                <layout manager="grid">
+                    <property name="padx">11</property>
+                    <property name="pady">10</property>
+                    <property name="propagate">False</property>
+                    <property name="sticky">e</property>
+                </layout>
+                <child>
+                    <object class="ttk.Button" id="button_viewall">
+                        <property name="command">view_all_click</property>
+                        <property name="text" translatable="yes">View All</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">0.06</property>
+                            <property name="rely">.05</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Button" id="button_searchentry">
+                        <property name="command">search_entry_click</property>
+                        <property name="text" translatable="yes">Search Entry</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">.06</property>
+                            <property name="rely">.20</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Button" id="button_addentry">
+                        <property name="command">add_entry_click</property>
+                        <property name="text" translatable="yes">Add Entry</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">.06</property>
+                            <property name="rely">.35</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Button" id="button_updateselection">
+                        <property name="command">update_selection_click</property>
+                        <property name="text" translatable="yes">Update Selected</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">.06</property>
+                            <property name="rely">.50</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Button" id="button_deleteselection">
+                        <property name="command">delete_selection_click</property>
+                        <property name="text" translatable="yes">Delete Selected</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">.06</property>
+                            <property name="rely">.65</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+                <child>
+                    <object class="ttk.Button" id="button_close">
+                        <property name="command">close_click</property>
+                        <property name="text" translatable="yes">Close</property>
+                        <property name="width">20</property>
+                        <property name="style">CustomButton.TButton</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                            <property name="relx">.06</property>
+                            <property name="rely">.80</property>
+                            <property name="x">0</property>
+                            <property name="y">0</property>
+                        </layout>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="ttk.Frame" id="frame_test">
+                <property name="height">200</property>
+                <property name="width">400</property>
+                <layout manager="grid">
+                    <property name="propagate">False</property>
+                    <property name="sticky">w</property>
+                    <property name="row">1</property>
+                    <property name="column">0</property>
+                    <property name="padx">10</property>
+                </layout>
+                <child>
+                    <object class="tk.Text" id="text_display">
+                        <property name="height">12</property>
+                        <property name="text" translatable="yes">text_1</property>
+                        <property name="width">50</property>
+                        <layout manager="place">
+                            <property name="anchor">nw</property>
+                        </layout>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
