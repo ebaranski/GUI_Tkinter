@@ -2,6 +2,8 @@ from tkinter import ttk
 from tkinter import messagebox
 import pygubu
 
+END = 'end'
+
 
 class bookstoreApp:
 
@@ -28,6 +30,18 @@ class bookstoreApp:
 
         # connect callbacks
         builder.connect_callbacks(self)
+
+        # initial data in listbox
+        self.data_listbox = lbox = builder.get_object('data_listbox')
+        lbox.select_clear(END)
+        for idx in range(0, 20):
+            text = f'Item {idx}'
+            lbox.insert(END, text)
+
+        see_record = 0
+        lbox.see(see_record)
+        # select_record = 0
+        # lbox.selection_set(select_record)
 
     def view_all_click(self):
         messagebox.showinfo("Message", 'You clicked button View All')

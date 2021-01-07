@@ -86,7 +86,7 @@
                         <property name="font">TkMenuFont</property>
                         <property name="justify">left</property>
                         <property name="state">normal</property>
-                        <property name="textvariable">string:titlefield</property>
+                        <property name="textvariable">string:title_entry</property>
                         <property name="validate">none</property>
                         <property name="width">30</property>
                         <layout manager="place">
@@ -102,7 +102,7 @@
                     <object class="ttk.Entry" id="entry_year">
                         <property name="font">TkDefaultFont</property>
                         <property name="justify">left</property>
-                        <property name="textvariable">string:yearfield</property>
+                        <property name="textvariable">string:year_entry</property>
                         <property name="width">10</property>
                         <layout manager="place">
                             <property name="anchor">nw</property>
@@ -116,7 +116,7 @@
                 <child>
                     <object class="ttk.Entry" id="entry_author">
                         <property name="exportselection">true</property>
-                        <property name="textvariable">string:authorfield</property>
+                        <property name="textvariable">string:author_entry</property>
                         <property name="width">30</property>
                         <layout manager="place">
                             <property name="anchor">nw</property>
@@ -129,7 +129,7 @@
                 </child>
                 <child>
                     <object class="ttk.Entry" id="entry_isbn">
-                        <property name="textvariable">string:isbnfield</property>
+                        <property name="textvariable">string:isbn_entry</property>
                         <layout manager="place">
                             <property name="anchor">nw</property>
                             <property name="relx">0.64</property>
@@ -246,23 +246,27 @@
             </object>
         </child>
         <child>
-            <object class="ttk.Frame" id="frame_test">
-                <property name="height">200</property>
-                <property name="width">400</property>
-                <layout manager="grid">
-                    <property name="propagate">False</property>
-                    <property name="sticky">w</property>
-                    <property name="row">1</property>
-                    <property name="column">0</property>
-                    <property name="padx">10</property>
+            <object class="pygubu.builder.widgets.scrollbarhelper" id="scrollbarhelper_1">
+                <property name="scrolltype">vertical</property>
+                <layout manager="place">
+                    <property name="anchor">ne</property>
+                    <property name="relx">.72</property>
+                    <property name="rely">.33</property>
+                    <property name="x">0</property>
+                    <property name="y">0</property>
                 </layout>
                 <child>
-                    <object class="tk.Text" id="text_display">
-                        <property name="height">12</property>
-                        <property name="text" translatable="yes">text_1</property>
-                        <property name="width">50</property>
-                        <layout manager="place">
-                            <property name="anchor">nw</property>
+                    <object class="tk.Listbox" id="data_listbox">
+                        <property name="listvariable">mylistbox_variable</property>
+                        <property name="height">11</property>
+                            <property name="width">52</property>
+                            <property name="font">{Verdana} 10 {}</property>
+                        <layout>
+                            <property name="column">0</property>
+                            <property name="propagate">True</property>
+                            <property name="row">1</property>
+                            <property name="sticky">w</property>
+
                         </layout>
                     </object>
                 </child>
