@@ -1,8 +1,12 @@
 from tkinter import ttk
 from tkinter import messagebox
+import script3 as s3
 import pygubu
 
 END = 'end'
+
+# get connection to database
+s3.connect_db()
 
 
 class bookstoreApp:
@@ -32,14 +36,14 @@ class bookstoreApp:
         builder.connect_callbacks(self)
 
         # initial data in listbox
-        self.data_listbox = lbox = builder.get_object('data_listbox')
-        lbox.select_clear(END)
-        for idx in range(0, 20):
-            text = f'Item {idx}'
-            lbox.insert(END, text)
-
-        see_record = 0
-        lbox.see(see_record)
+        # self.data_listbox = lbox = builder.get_object('data_listbox')
+        # lbox.select_clear(END)
+        # for idx in range(0, 20):
+        #     text = f'Item {idx}'
+        #     lbox.insert(END, text)
+        #
+        # see_record = 0
+        # lbox.see(see_record)
         # select_record = 0
         # lbox.selection_set(select_record)
 
@@ -57,9 +61,16 @@ class bookstoreApp:
         value = entry.get()
         messagebox.showinfo("Message", value)
 
-        entry = self.builder.get_variable('titlefield')
-        value = entry.get()
-        messagebox.showinfo("Message", repr(value))
+        entry = self.builder.get_variable('title_entry')
+        title_entry = entry.get()
+        entry = self.builder.get_variable('author_entry')
+        author_entry = entry.get()
+        entry = self.builder.get_variable('year_entry')
+        year_entry = entry.get()
+        entry = self.builder.get_variable('isbn_entry')
+        isbn_entry = entry.get()
+
+        s3.insert_db(title_entry, author_entry, year_entry, isbn_entry)
 
     def close_click(self):
         messagebox.showinfo("Message", 'You clicked button Close')
